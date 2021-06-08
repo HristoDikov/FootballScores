@@ -1,7 +1,7 @@
 ﻿namespace FootballScores.Web.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
-    using FootballScores.Services;
+    using FootballScores.Services.Contracts;
     using FootballScores.Services.OutputModels;
     using System.Threading.Tasks;
     using System.Collections.Generic;

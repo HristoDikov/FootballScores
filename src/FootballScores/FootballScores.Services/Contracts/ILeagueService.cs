@@ -1,4 +1,4 @@
-﻿namespace FootballScores.Services
+﻿namespace FootballScores.Services.Contracts
 {
     using FootballScores.Services.OutputModels;
     using System.Collections.Generic;

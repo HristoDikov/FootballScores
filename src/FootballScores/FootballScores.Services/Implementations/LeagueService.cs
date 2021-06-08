@@ -1,6 +1,7 @@
-﻿namespace FootballScores.Services
+﻿namespace FootballScores.Services.Implementations
 {
     using FootballScores.Data;
+    using FootballScores.Services.Contracts;
     using FootballScores.Services.OutputModels;
     using Microsoft.EntityFrameworkCore;
     using System;

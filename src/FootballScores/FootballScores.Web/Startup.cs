@@ -1,7 +1,8 @@
 namespace FootballScores.Web
 {
     using FootballScores.Data;
-    using FootballScores.Services;
+    using FootballScores.Services.Contracts;
+    using FootballScores.Services.Implementations;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
@@ -27,6 +28,7 @@ namespace FootballScores.Web
                      ServiceLifetime.Transient);
 
             services.AddScoped<ILeagueService, LeagueService>();
+            services.AddScoped<ITeamService, TeamService>();
             services.AddControllers();
         }
 
