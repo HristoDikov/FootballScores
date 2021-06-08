@@ -3,7 +3,7 @@
     public class Statistic
     {
 
-        internal Statistic(int hostTeamShotsOnTarget, int hostTeamShotsOffTarget, int hostTeamPossession, int hostTeamCornerKicks, int hostTeamOffsides, int hostTeamFouls,
+        public Statistic(int hostTeamShotsOnTarget, int hostTeamShotsOffTarget, int hostTeamPossession, int hostTeamCornerKicks, int hostTeamOffsides, int hostTeamFouls,
             int awayTeamShotsOnTarget, int awayTeamShotsOffTarget, int awayTeamPossession, int awayTeamCornerKicks, int awayTeamOffsides, int awayTeamFouls)
         {
             this.HostTeamShotsOnTarget = hostTeamShotsOnTarget;

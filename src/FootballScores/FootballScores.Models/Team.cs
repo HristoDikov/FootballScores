@@ -9,7 +9,7 @@
         private readonly HashSet<Fixture> hostFixtures;
         private readonly HashSet<Player> players;
 
-        internal Team(string name, string country, string city, int goalsScored, int goalsConceded, string manager)
+        public Team(string name, string country, string city, int goalsScored, int goalsConceded, string manager)
         {
             this.Name = name;
             this.Country = country;
