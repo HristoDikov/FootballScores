@@ -1,5 +1,6 @@
 ﻿namespace FootballScores.Data
 {
+    using FootballScores.Data.Extensions;
     using FootballScores.Models;
     using Microsoft.EntityFrameworkCore;
     using System.Reflection;
@@ -24,6 +25,8 @@
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            builder.Seed();
 
             base.OnModelCreating(builder);
         }
