@@ -4,4 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\FootballScores.Data\FootballScores.Data.csproj" />
+  </ItemGroup>
 </Project>
