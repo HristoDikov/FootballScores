@@ -9,11 +9,9 @@
         private readonly HashSet<Fixture> fixtures;
         private readonly HashSet<Team> teams;
 
-        public League(string name, string season, int playedRounds, DateTime startDate, DateTime endDate)
+        public League(string name, DateTime startDate, DateTime endDate)
         {
             this.Name = name;
-            this.Season = season;
-            this.PlayedRounds = playedRounds;
             this.StartDate = startDate;
             this.EndDate = endDate;
 
@@ -23,10 +21,6 @@
         public int Id { get; set; }
 
         public string Name { get; private set; }
-
-        public string Season { get; private set; }
-
-        public int PlayedRounds { get; private set; }
 
         public DateTime StartDate { get; private set; }
 

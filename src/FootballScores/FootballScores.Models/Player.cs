@@ -8,15 +8,9 @@
         private int assists;
         private readonly ICollection<Goal> goals;
 
-        private Player()
-        {
-
-        }
-
-        public Player(string firstName, string middleName, string lastName, string position, int assists, int goals)
+        public Player(string firstName, string lastName, string position, int assists, int goals)
         {
             this.FirstName = firstName;
-            this.MiddleName = middleName;
             this.LastName = lastName;
             this.Position = position;
             this.assists = assists;
@@ -27,7 +21,6 @@
 
         public string FirstName { get; private set; }
 
-        public string MiddleName { get; private set; }
 
         public string LastName { get; private set; }
 
