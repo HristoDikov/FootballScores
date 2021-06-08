@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballScores.Web", "FootballScores.Web\FootballScores.Web.csproj", "{C01A532F-77AA-4409-85F2-C1379A856D8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballScores.Web", "FootballScores.Web\FootballScores.Web.csproj", "{C01A532F-77AA-4409-85F2-C1379A856D8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballScores.Data", "FootballScores.Data\FootballScores.Data.csproj", "{A2DE0AAE-B190-4191-902A-B2207CAB67C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballScores.Data", "FootballScores.Data\FootballScores.Data.csproj", "{A2DE0AAE-B190-4191-902A-B2207CAB67C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballScores.Services", "FootballScores.Services\FootballScores.Services.csproj", "{F03D103E-B478-419A-94E9-C610CB8E3E73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballScores.Models", "FootballScores.Models\FootballScores.Models.csproj", "{149638A3-F77B-4349-A8E3-6A6A7740DF96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballScores.Models", "FootballScores.Models\FootballScores.Models.csproj", "{149638A3-F77B-4349-A8E3-6A6A7740DF96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballScores.Services", "FootballScores.Services\FootballScores.Services.csproj", "{567D909A-863D-4FD5-8C5A-D1D640EE9AB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{A2DE0AAE-B190-4191-902A-B2207CAB67C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2DE0AAE-B190-4191-902A-B2207CAB67C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2DE0AAE-B190-4191-902A-B2207CAB67C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F03D103E-B478-419A-94E9-C610CB8E3E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F03D103E-B478-419A-94E9-C610CB8E3E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F03D103E-B478-419A-94E9-C610CB8E3E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F03D103E-B478-419A-94E9-C610CB8E3E73}.Release|Any CPU.Build.0 = Release|Any CPU
 		{149638A3-F77B-4349-A8E3-6A6A7740DF96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{149638A3-F77B-4349-A8E3-6A6A7740DF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{149638A3-F77B-4349-A8E3-6A6A7740DF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{149638A3-F77B-4349-A8E3-6A6A7740DF96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567D909A-863D-4FD5-8C5A-D1D640EE9AB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567D909A-863D-4FD5-8C5A-D1D640EE9AB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567D909A-863D-4FD5-8C5A-D1D640EE9AB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567D909A-863D-4FD5-8C5A-D1D640EE9AB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
