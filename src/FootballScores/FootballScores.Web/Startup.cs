@@ -29,6 +29,7 @@ namespace FootballScores.Web
 
             services.AddScoped<ILeagueService, LeagueService>();
             services.AddScoped<ITeamService, TeamService>();
+            services.AddScoped<IFixtureService, FixtureService>();
             services.AddControllers();
         }
 
