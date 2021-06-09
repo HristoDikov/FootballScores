@@ -18,9 +18,9 @@
         }
 
         public async Task<FixtureWithStatsOutputModel> GetStatistic(int fixtureId)
-        {
-            return await this.db
+        => await this.db
                 .Fixtures
+                .AsNoTracking()
                 .Where(f => f.Id == fixtureId)
                 .Select(f => new FixtureWithStatsOutputModel
                 {
@@ -36,7 +36,7 @@
                     HostTeamPossession = f.Statistic.HostTeamPossession,
                     HostTeamShotsOnTarget = f.Statistic.HostTeamShotsOnTarget,
                     HostTeamShotsOffTarget = f.Statistic.HostTeamShotsOffTarget,
-                    Goals = f.Score.Select(s => new FullGoalOutputModel 
+                    Goals = f.Score.Select(s => new FullGoalOutputModel
                     {
                         MinuteScored = s.MinuteScored,
                         IsOwnGoal = s.IsOwnGoal,
@@ -45,6 +45,5 @@
                     })
                 })
                 .FirstOrDefaultAsync();
-        }
     }
 }

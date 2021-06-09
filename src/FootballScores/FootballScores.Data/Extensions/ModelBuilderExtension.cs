@@ -150,16 +150,14 @@
                     CreatedOn = DateTime.Now
                 });
             });
-            //.HasData(
-            //   // new Fixture().,
-            //new Fixture(DateTime.Now, "Old Traford", "Mark Ham", new Statistic(10, 10, 50, 1, 2, 2, 10, 11, 50, 2, 3, 4)) { Id = 2, HostTeamId = 3, AwayTeamId = 4 },
-            //new Fixture(DateTime.Now, "PSG ARena", "Jan Pan", new Statistic(10, 10, 50, 1, 2, 2, 10, 11, 50, 2, 3, 4)) { Id = 3, HostTeamId = 5, AwayTeamId = 6 });
 
             modelBuilder.Entity<Goal>().HasData(
                     new Goal(10, false, false) { Id = 1, ScorerId = 1, FixtureId = 1 },
                     new Goal(50, false, false) { Id = 2, ScorerId = 2, FixtureId = 1 },
-                    new Goal(50, false, false) { Id = 3, ScorerId = 3, FixtureId = 2 },
-                    new Goal(50, false, false) { Id = 4, ScorerId = 4, FixtureId = 2 });
+                    new Goal(43, false, false) { Id = 3, ScorerId = 5, FixtureId = 2 },
+                    new Goal(54, false, false) { Id = 4, ScorerId = 7, FixtureId = 2 },
+                    new Goal(77, false, false) { Id = 5, ScorerId = 9, FixtureId = 3 },
+                    new Goal(55, false, false) { Id = 6, ScorerId = 11, FixtureId = 3 });
         }
     }
 }

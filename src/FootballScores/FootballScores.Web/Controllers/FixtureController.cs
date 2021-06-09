@@ -18,8 +18,6 @@
         [HttpGet]
         [Route(nameof(Get))]
         public async Task<ActionResult<IEnumerable<FixturesOutputModel>>> Get(int fixtureId)
-        {
-            return Ok(await this.fixtureService.GetStatistic(fixtureId));
-        }
+            => Ok(await this.fixtureService.GetStatistic(fixtureId));
     }
 }

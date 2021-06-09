@@ -18,16 +18,15 @@
         }
 
         public async Task<IEnumerable<PlayerOutputModel>> GetTeamPlayers(int teamId)
-        {
-            return await this.db
-                  .Player
-                  .Where(p => p.TeamId == teamId)
-                  .Select(t => new PlayerOutputModel
-                  {
-                      Name = t.FirstName + " " + t.LastName,
-                      Position = t.Position
-                  })
-                  .ToListAsync();
-        }
+        => await this.db
+             .Player
+             .AsNoTracking()
+             .Where(p => p.TeamId == teamId)
+             .Select(t => new PlayerOutputModel
+             {
+                 Name = t.FirstName + " " + t.LastName,
+                 Position = t.Position
+             })
+             .ToListAsync();
     }
 }

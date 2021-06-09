@@ -18,8 +18,6 @@
         [HttpGet]
         [Route(nameof(GetTeamPlayers))]
         public async Task<ActionResult<IEnumerable<PlayerOutputModel>>> GetTeamPlayers(int teamId)
-        {
-            return Ok(await this.teamService.GetTeamPlayers(teamId));
-        }
+            => Ok(await this.teamService.GetTeamPlayers(teamId));
     }
 }

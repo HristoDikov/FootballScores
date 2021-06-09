@@ -18,23 +18,16 @@
         [HttpGet]
         [Route(nameof(List))]
         public async Task<ActionResult<IEnumerable<LeagueOutputModel>>> List()
-        {
-            return Ok(await this.leagueService.GetLeagues());
-        }
+            => Ok(await this.leagueService.GetLeagues());
 
         [HttpGet]
         [Route(nameof(GetFixturesForLeague))]
         public async Task<ActionResult<IEnumerable<LeagueOutputModel>>> GetFixturesForLeague(int leagueId)
-        {
-            return Ok(await this.leagueService.GetSpecificLeagueFixtures(leagueId));
-        }
+            => Ok(await this.leagueService.GetSpecificLeagueFixtures(leagueId));
 
         [HttpGet]
         [Route(nameof(GetFixturesForLeagueByDate))]
         public async Task<ActionResult<IEnumerable<LeagueOutputModel>>> GetFixturesForLeagueByDate(int year, int month, int day)
-        {
-            return Ok(await this.leagueService.GetLeaguesFixturesByDate(year, month, day));
-        }
-
+            => Ok(await this.leagueService.GetLeaguesFixturesByDate(year, month, day));
     }
 }
