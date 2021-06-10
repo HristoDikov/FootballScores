@@ -31,11 +31,5 @@
 
         public ICollection<Team> Teams
             => this.teams.ToList().AsReadOnly();
-
-        public void AddGame(Fixture fixture)
-            => this.fixtures.Add(fixture);
-
-        public void AddTeam(Team team)
-            => this.teams.Add(team);
     }
 }

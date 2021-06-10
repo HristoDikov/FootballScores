@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace FootballScores.Services.OutputModels
+﻿namespace FootballScores.Services.OutputModels
 {
+    using System.Collections.Generic;
+
     public class FixtureWithStatsOutputModel
     {
         public int HostTeamShotsOnTarget { get; set; }

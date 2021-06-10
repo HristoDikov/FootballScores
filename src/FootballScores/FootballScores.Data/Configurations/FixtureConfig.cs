@@ -54,7 +54,7 @@
                 .HasForeignKey(f => f.HostTeamId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
-                      builder
+            builder
                 .HasOne(f => f.AwayTeam)
                 .WithMany(t => t.AwayFixtures)
                 .HasForeignKey(f => f.AwayTeamId)

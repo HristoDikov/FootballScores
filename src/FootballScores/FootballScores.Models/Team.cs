@@ -56,15 +56,5 @@
 
         public ICollection<Fixture> AwayFixtures
             => this.awayFixtures.ToList().AsReadOnly();
-
-
-        public void AddPlayer(Player player)
-            => this.players.Add(player);
-
-        public void AddHomeFixture(Fixture fixture)
-            => this.hostFixtures.Add(fixture);
-
-        public void AddAwayFixture(Fixture fixture)
-           => this.awayFixtures.Add(fixture);
     }
 }

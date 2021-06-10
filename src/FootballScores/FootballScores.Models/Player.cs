@@ -32,13 +32,5 @@
         public int TeamId { get; set; }
 
         public Team Team { get; set; }
-
-        public void AddGoals(Goal goal)
-        => this.goals.Add(goal);
-       
-        public void AddAssists(int assists)
-        {
-            this.assists += assists;
-        }
     }
 }

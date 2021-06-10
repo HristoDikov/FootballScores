@@ -40,8 +40,5 @@
         public string Venue { get; set; }
 
         public string Referee { get; set; }
-
-        public void AddHomeTeamScore(Goal goal)
-           => this.score.Add(goal);
     }
 }
