@@ -62,9 +62,9 @@ namespace FootballScores.Web
                     options.RoutePrefix = string.Empty;
                 })
                 .UseCors(options => options
-                    .WithOrigins("http://localhost:3000")
-                    .AllowAnyHeader()
-                    .AllowAnyMethod())
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod())
                 .UseHttpsRedirection()
                 .UseStaticFiles()
                 .UseRouting()

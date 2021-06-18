@@ -4,9 +4,9 @@
 
     public class LeagueOutputModel
     {
-        public int Id { get; set; }
+        public int LeagueId { get; set; }
 
-        public string Name { get; set; }
+        public string LeagueName { get; set; }
 
         public IEnumerable<FixturesOutputModel> Fixtures { get; set; }
     }

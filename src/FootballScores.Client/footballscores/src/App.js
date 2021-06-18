@@ -1,16 +1,33 @@
-import './App.css';
-import {store} from "./actions/store"
-import {Provider} from "react-redux";
-import Leagues from './components/Leagues';
-import { Container } from "@material-ui/core"
+import "./App.css";
+import React from "react";
+import { Component } from "react";
+import axios from "axios";
+import Leagues from "./components/Leagues";
 
-function App() {
-  return (
-    <Provider store={store}>
-      <Container maxWidth="lg"></Container>
-<Leagues></Leagues>
-    </Provider>
-  );
+class App extends Component {
+  state = {
+    leagues: [],
+  };
+
+  componentDidMount() {
+    const response = axios.get(`https://localhost:44363/League/List`);
+    response.then((res) => {
+      const leagues = res.data;
+      this.setState({
+        leagues: leagues,
+      });
+    });
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <main className="container">
+          <Leagues leagues={this.state.leagues} />
+        </main>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;

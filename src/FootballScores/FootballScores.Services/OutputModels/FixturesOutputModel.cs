@@ -14,7 +14,7 @@
 
         public string AwayTeamName { get; set; }
 
-        public IEnumerable<GoalOutputModel> Score { get; set; }
+        public string Score { get; set; }
 
         public string GameDate { get; set; }
 

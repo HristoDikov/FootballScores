@@ -22,11 +22,11 @@
         public async Task<IEnumerable<LeagueOutputModel>> GetLeagues()
         => await this.db
              .Leagues
-             .AsNoTracking()
+              .AsNoTracking()
              .Select(l => new LeagueOutputModel
              {
-                 Id = l.Id,
-                 Name = l.Name,
+                 LeagueId = l.Id,
+                 LeagueName = l.Name,
                  Fixtures = l.Fixtures.Select(f => new FixturesOutputModel
                  {
                      Id = f.Id,
@@ -37,11 +37,7 @@
                      GameDate = f.GameDate.ToString(),
                      Referee = f.Referee,
                      Venue = f.Venue,
-                     Score = f.Score.Select(s => new GoalOutputModel
-                     {
-                         MinuteScored = s.MinuteScored,
-                         Scorer = s.Scorer.FirstName + " " + s.Scorer.LastName
-                     })
+                     Score = f.Score.Where(s => s.Scorer.TeamId == f.HostTeamId).Count().ToString() + " : " + f.Score.Where(s => s.Scorer.TeamId == f.AwayTeamId).Count().ToString()
                  })
              })
                 .ToListAsync();
@@ -61,11 +57,8 @@
                  GameDate = f.GameDate.ToString(),
                  Referee = f.Referee,
                  Venue = f.Venue,
-                 Score = f.Score.Select(s => new GoalOutputModel
-                 {
-                     MinuteScored = s.MinuteScored,
-                     Scorer = s.Scorer.FirstName + " " + s.Scorer.LastName
-                 })
+                 Score = f.Score.Where(s => s.Scorer.TeamId == f.HostTeamId).Count().ToString() + " : " + f.Score.Where(s => s.Scorer.TeamId == f.AwayTeamId).Count().ToString()
+
              })
              .ToListAsync();
 
@@ -87,11 +80,8 @@
                     GameDate = f.GameDate.ToString(),
                     Referee = f.Referee,
                     Venue = f.Venue,
-                    Score = f.Score.Select(s => new GoalOutputModel
-                    {
-                        MinuteScored = s.MinuteScored,
-                        Scorer = s.Scorer.FirstName + " " + s.Scorer.LastName
-                    })
+                    Score = f.Score.Where(s => s.Scorer.TeamId == f.HostTeamId).Count().ToString() + " : " + f.Score.Where(s => s.Scorer.TeamId == f.AwayTeamId).Count().ToString()
+
                 })
                 .ToListAsync();
         }
