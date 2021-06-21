@@ -1,15 +1,15 @@
 namespace FootballScores.Web
 {
     using FootballScores.Data;
-    using FootballScores.Services.Contracts;
-    using FootballScores.Services.Implementations;
-    using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Hosting;
     using Microsoft.OpenApi.Models;
+    using Microsoft.Extensions.Hosting;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.EntityFrameworkCore;
+    using FootballScores.Services.Contracts;
+    using Microsoft.Extensions.Configuration;
+    using FootballScores.Services.Implementations;
+    using Microsoft.Extensions.DependencyInjection;
 
     public class Startup
     {
@@ -27,6 +27,8 @@ namespace FootballScores.Web
                options.UseSqlServer(
                   Configuration.GetConnectionString("DefaultConnection")),
                      ServiceLifetime.Transient);
+
+            services.AddAutoMapper(typeof(ILeagueService).Assembly);
 
             services.AddTransient<ILeagueService, LeagueService>();
             services.AddTransient<ITeamService, TeamService>();

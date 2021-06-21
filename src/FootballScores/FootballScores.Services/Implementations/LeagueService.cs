@@ -1,65 +1,41 @@
 ﻿namespace FootballScores.Services.Implementations
 {
+    using System;
+    using AutoMapper;
+    using System.Linq;
     using FootballScores.Data;
-    using FootballScores.Models;
+    using System.Threading.Tasks;
+    using System.Collections.Generic;
+    using Microsoft.EntityFrameworkCore;
+    using AutoMapper.QueryableExtensions;
     using FootballScores.Services.Contracts;
     using FootballScores.Services.OutputModels;
-    using Microsoft.EntityFrameworkCore;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
 
     public class LeagueService : ILeagueService
     {
         private readonly FootballStatsDbContext db;
+        private readonly IMapper mapper;
 
-        public LeagueService(FootballStatsDbContext db)
+
+        public LeagueService(FootballStatsDbContext db, IMapper mapper)
         {
             this.db = db;
+            this.mapper = mapper;
         }
 
         public async Task<IEnumerable<LeagueOutputModel>> GetLeagues()
         => await this.db
              .Leagues
-              .AsNoTracking()
-             .Select(l => new LeagueOutputModel
-             {
-                 LeagueId = l.Id,
-                 LeagueName = l.Name,
-                 Fixtures = l.Fixtures.Select(f => new FixturesOutputModel
-                 {
-                     Id = f.Id,
-                     HostTeamId = f.HostTeamId,
-                     AwayTeamId = f.AwayTeamId,
-                     HostTeamName = f.HostTeam.Name,
-                     AwayTeamName = f.AwayTeam.Name,
-                     GameDate = f.GameDate.ToString(),
-                     Referee = f.Referee,
-                     Venue = f.Venue,
-                     Score = f.Score.Where(s => s.Scorer.TeamId == f.HostTeamId).Count().ToString() + " : " + f.Score.Where(s => s.Scorer.TeamId == f.AwayTeamId).Count().ToString()
-                 })
-             })
-                .ToListAsync();
+             .AsNoTracking()
+             .ProjectTo<LeagueOutputModel>(this.mapper.ConfigurationProvider)
+             .ToListAsync();
 
         public async Task<IEnumerable<FixturesOutputModel>> GetSpecificLeagueFixtures(int leagueId)
         => await this.db
              .Fixtures
              .AsNoTracking()
              .Where(f => f.LeagueId == leagueId)
-             .Select(f => new FixturesOutputModel
-             {
-                 Id = f.Id,
-                 HostTeamId = f.HostTeamId,
-                 AwayTeamId = f.AwayTeamId,
-                 HostTeamName = f.HostTeam.Name,
-                 AwayTeamName = f.AwayTeam.Name,
-                 GameDate = f.GameDate.ToString(),
-                 Referee = f.Referee,
-                 Venue = f.Venue,
-                 Score = f.Score.Where(s => s.Scorer.TeamId == f.HostTeamId).Count().ToString() + " : " + f.Score.Where(s => s.Scorer.TeamId == f.AwayTeamId).Count().ToString()
-
-             })
+             .ProjectTo<FixturesOutputModel>(this.mapper.ConfigurationProvider)
              .ToListAsync();
 
         public async Task<IEnumerable<FixturesOutputModel>> GetLeaguesFixturesByDate(int year, int month, int day)
@@ -70,19 +46,7 @@
                 .Fixtures
                 .AsNoTracking()
                 .Where(f => f.GameDate.Date == date)
-                .Select(f => new FixturesOutputModel
-                {
-                    Id = f.Id,
-                    HostTeamId = f.HostTeamId,
-                    AwayTeamId = f.AwayTeamId,
-                    HostTeamName = f.HostTeam.Name,
-                    AwayTeamName = f.AwayTeam.Name,
-                    GameDate = f.GameDate.ToString(),
-                    Referee = f.Referee,
-                    Venue = f.Venue,
-                    Score = f.Score.Where(s => s.Scorer.TeamId == f.HostTeamId).Count().ToString() + " : " + f.Score.Where(s => s.Scorer.TeamId == f.AwayTeamId).Count().ToString()
-
-                })
+                .ProjectTo<FixturesOutputModel>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
         }
     }
