@@ -1,8 +1,8 @@
 ﻿namespace FootballScores.Services.Contracts
 {
-    using FootballScores.Services.OutputModels;
-    using System.Collections.Generic;
+    using OutputModels;
     using System.Threading.Tasks;
+    using System.Collections.Generic;
 
     public interface ITeamService 
     {

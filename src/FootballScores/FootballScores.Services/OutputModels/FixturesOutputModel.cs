@@ -1,6 +1,5 @@
 ﻿namespace FootballScores.Services.OutputModels
 {
-    using System.Collections.Generic;
 
     public class FixturesOutputModel
     {

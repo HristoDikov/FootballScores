@@ -1,10 +1,10 @@
 ﻿namespace FootballScores.Web.Controllers
 {
-    using FootballScores.Services.Contracts;
-    using FootballScores.Services.OutputModels;
+    using Services.Contracts;
+    using Services.OutputModels;
+    using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
-    using System.Threading.Tasks;
 
     public class FixtureController : ApiController
     {

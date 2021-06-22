@@ -1,12 +1,12 @@
 ﻿namespace FootballScores.Services.Implementations
 {
-    using FootballScores.Data;
-    using FootballScores.Services.Contracts;
-    using FootballScores.Services.OutputModels;
-    using Microsoft.EntityFrameworkCore;
-    using System.Collections.Generic;
+    using Data;
+    using Contracts;
     using System.Linq;
+    using OutputModels;
     using System.Threading.Tasks;
+    using System.Collections.Generic;
+    using Microsoft.EntityFrameworkCore;
 
     public class TeamService : ITeamService
     {
